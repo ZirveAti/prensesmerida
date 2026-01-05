@@ -1,79 +1,144 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Meridanın Kraliyeti</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Meridanın Kraliyeti</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background: linear-gradient(180deg, #ffb6f0, #c77dff);
-            font-family: Georgia, serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
+<style>
+body{
+    margin:0;
+    font-family: Georgia, serif;
+    background: linear-gradient(180deg,#ffb6f0,#c77dff);
+    color:white;
+}
 
-        .box {
-            background: rgba(255,255,255,0.15);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(255,182,240,0.7);
-            backdrop-filter: blur(6px);
-        }
+/* ===== MENU ===== */
+nav{
+    background: rgba(0,0,0,0.25);
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    animation: menuDown 1s ease;
+    z-index:100;
+}
 
-        .castle {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
+@keyframes menuDown{
+    from{transform:translateY(-100%);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
 
-        h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
+nav .logo{
+    font-size:22px;
+    font-weight:bold;
+}
 
-        h2 {
-            font-size: 20px;
-            font-weight: normal;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    position:relative;
+    padding-bottom:5px;
+}
 
-        .admin {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 25px;
-        }
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:2px;
+    background:#ffb6f0;
+    transition:.3s;
+}
 
-        a {
-            text-decoration: none;
-            color: #fff;
-            background: #ff69b4;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 18px;
-            transition: 0.3s;
-        }
+nav a:hover::after{
+    width:100%;
+}
 
-        a:hover {
-            background: #ff1493;
-            box-shadow: 0 0 15px #fff;
-        }
-    </style>
+/* ===== HERO ===== */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:18px;
+    opacity:.9;
+}
+
+/* ===== SECTION ===== */
+.section{
+    background: rgba(255,255,255,0.15);
+    margin:30px;
+    padding:30px;
+    border-radius:20px;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#ff69b4;
+    color:white;
+    border-radius:25px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ff1493;
+    transform:scale(1.05);
+}
+</style>
 </head>
+
 <body>
 
-    <div class="box">
-        <div class="castle">🏰</div>
-        <h1>Meridanın Kraliyeti</h1>
-        <h2>Büyülü Prenses Şatosu</h2>
-        <div class="admin">👑 Admin: Ati</div>
-        <a href="castle.html">Şatoya Gir ✨</a>
+<nav>
+    <div class="logo">🏰 Meridanın Kraliyeti</div>
+    <div>
+        <a href="#about">Hakkında</a>
+        <a href="#rules">Kurallar</a>
+        <a href="castle.html">Şato</a>
     </div>
+</nav>
+
+<div class="hero">
+    <h1>👑 Meridanın Kraliyeti</h1>
+    <p>Büyülü prenses şatosuna hoş geldin</p>
+    <p><b>Admin:</b> Ati</p>
+</div>
+
+<div class="section" id="about">
+    <h2>✨ Krallık Hakkında</h2>
+    <p>
+        Meridanın Kraliyeti sevgi, sadakat ve saygı üzerine kurulmuş
+        büyülü bir diyardır. Buraya giren herkes krallığın bir parçasıdır.
+    </p>
+</div>
+
+<div class="section" id="rules">
+    <h2>📜 Krallık Kuralları</h2>
+    <ul>
+        <li>👑 Saygı her şeyden önce gelir</li>
+        <li>💖 Kırıcı sözlere yer yoktur</li>
+        <li>🏰 Krallık huzuru korunur</li>
+        <li>✨ Herkes eşittir</li>
+    </ul>
+</div>
+
+<div class="hero">
+    <a class="btn" href="castle.html">Şatoya Gir ✨</a>
+</div>
 
 </body>
 </html>
