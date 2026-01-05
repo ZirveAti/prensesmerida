@@ -11,13 +11,6 @@ body{
     font-family: Georgia, serif;
     background: linear-gradient(180deg,#ffd6f5,#b98cff);
     color:white;
-    opacity:0;
-    animation: pageIn 1.2s ease forwards;
-}
-
-@keyframes pageIn{
-    from{opacity:0;transform:translateY(30px);}
-    to{opacity:1;transform:translateY(0);}
 }
 
 nav{
@@ -31,9 +24,9 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
+    margin-left:20px;
 }
 
-/* HERO */
 .hero{
     text-align:center;
     padding:100px 20px;
@@ -46,7 +39,6 @@ nav a{
     border-radius:20px;
 }
 
-/* CLOCK */
 .clock{
     position:fixed;
     bottom:15px;
@@ -61,20 +53,20 @@ nav a{
 <nav>
     <div class="logo">👑 Şato</div>
     <div>
-        <a href="index.html" onclick="goPage(event)">Ana Sayfa</a>
+        <a href="index.html">Ana Sayfa</a>
     </div>
 </nav>
 
 <div class="hero">
     <h1>🏰 Prenses Şatosu</h1>
-    <p>Bu salon kraliyete aittir</p>
+    <p>Bu salon sadece krallığa ait olanlara açıktır</p>
 </div>
 
 <div class="section">
     <h2>✨ Şato Salonu</h2>
     <p>
-        Burada dualar fısıltıyla okunur,
-        kalpler huzur bulur.
+        Bu şato, prensesin huzur bulduğu yerdir.
+        Sessizlik, zarafet ve güven burada yaşar.
     </p>
 </div>
 
@@ -88,14 +80,6 @@ function updateClock(){
 }
 setInterval(updateClock,1000);
 updateClock();
-
-function goPage(e){
-    e.preventDefault();
-    document.body.style.animation="pageOut .6s ease forwards";
-    setTimeout(()=>{
-        window.location.href=e.target.href;
-    },600);
-}
 </script>
 
 </body>
