@@ -2,212 +2,118 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meridanın Kraliyeti</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Playfair Display", serif;
-}
-
 body{
-  background:linear-gradient(to bottom,#f7e9ff,#e9d6ff,#d9c2ff);
-  color:#3a1c4a;
-  overflow-x:hidden;
+    margin:0;
+    font-family: Georgia, serif;
+    background: linear-gradient(180deg,#ffb6f0,#c77dff);
+    color:white;
 }
 
-/* ===== MENÜ BUTON ===== */
-.menu-btn{
-  position:fixed;
-  top:20px;
-  right:20px;
-  width:36px;
-  height:26px;
-  cursor:pointer;
-  z-index:1001;
-}
-.menu-btn span{
-  display:block;
-  height:3px;
-  background:#8b4cff;
-  margin:6px 0;
-  border-radius:5px;
-  transition:.4s;
-}
-.menu-btn.active span:nth-child(1){
-  transform:rotate(45deg) translate(6px,6px);
-}
-.menu-btn.active span:nth-child(2){
-  opacity:0;
-}
-.menu-btn.active span:nth-child(3){
-  transform:rotate(-45deg) translate(7px,-7px);
-}
-
-/* ===== MENÜ ===== */
+/* MENU */
 nav{
-  position:fixed;
-  inset:0;
-  background:rgba(255,240,255,.95);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transform:scale(0);
-  transition:.5s ease;
-  z-index:1000;
-}
-nav.active{transform:scale(1);}
-nav ul{
-  list-style:none;
-  text-align:center;
-}
-nav li{
-  font-size:26px;
-  margin:18px 0;
-  cursor:pointer;
-  color:#7a3db8;
-}
-nav li:hover{
-  text-decoration:underline;
+    background: rgba(0,0,0,0.25);
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-/* ===== SAYFA ===== */
-.page{
-  min-height:100vh;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
-  padding:40px;
-  animation:fade 1s;
-}
-.page.active{display:flex;}
+nav .logo{font-size:22px;font-weight:bold;}
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
 }
 
-/* ===== YAZILAR ===== */
-h1{
-  font-size:46px;
-  margin-bottom:14px;
-}
-h2{
-  font-size:20px;
-  font-weight:normal;
-  margin-bottom:18px;
-  opacity:.85;
-}
-p{
-  max-width:720px;
-  font-size:16px;
-  line-height:1.8;
-  margin-bottom:14px;
+.hero{
+    text-align:center;
+    padding:80px 20px;
 }
 
-/* ===== ALT BİLGİ ===== */
+.section{
+    background: rgba(255,255,255,0.15);
+    margin:30px;
+    padding:30px;
+    border-radius:20px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#ff69b4;
+    color:white;
+    border-radius:25px;
+    text-decoration:none;
+}
+
 .clock{
-  position:fixed;
-  bottom:18px;
-  left:18px;
-  font-size:13px;
-  opacity:.7;
-}
-.counter{
-  position:fixed;
-  bottom:18px;
-  right:18px;
-  font-size:13px;
-  opacity:.7;
+    position:fixed;
+    bottom:15px;
+    right:20px;
+    font-size:14px;
+    opacity:.85;
 }
 </style>
 </head>
 
 <body>
 
-<!-- MENÜ BUTON -->
-<div class="menu-btn" onclick="toggleMenu()">
-  <span></span><span></span><span></span>
-</div>
-
-<!-- MENÜ -->
-<nav id="menu">
-  <ul>
-    <li onclick="goPage('home')">Saray</li>
-    <li onclick="goPage('about')">Prenses Hakkında</li>
-    <li onclick="goPage('rules')">Kraliyet Kuralları</li>
-    <li onclick="goPage('story')">Masal</li>
-  </ul>
+<nav>
+    <div class="logo">🏰 Meridanın Kraliyeti</div>
+    <div>
+        <a href="#about">Hakkında</a>
+        <a href="#rules">Kurallar</a>
+        <a href="castle.html">Şato</a>
+    </div>
 </nav>
 
-<!-- SAYFALAR -->
-<div id="home" class="page active">
-  <h1>Meridanın Kraliyeti</h1>
-  <h2>Bir prensesin masalından doğan krallık ✨</h2>
+<div class="hero">
+    <h1>👑 Meridanın Kraliyeti</h1>
+    <p>Büyülü prenses şatosuna hoş geldin</p>
+    <p><b>Admin:</b> Ati</p>
 </div>
 
-<div id="about" class="page">
-  <h1>Prenses Hakkında</h1>
-  <p>
-    Merida, zarafetin ve cesaretin simgesidir.
-    Bu krallık; hayal kurabilenlerin, kalbi temiz olanların
-    sığınağıdır.
-  </p>
+<div class="section" id="about">
+    <h2>✨ Krallık Hakkında</h2>
+    <p>
+        Meridanın Kraliyeti sevgi, sadakat ve saygı üzerine kurulmuş
+        büyülü bir diyardır.
+    </p>
 </div>
 
-<div id="rules" class="page">
-  <h1>Kraliyet Kuralları</h1>
-  <p>🌸 Zarafet her şeyden önce gelir.</p>
-  <p>🌸 Kalp kırmak yasaktır.</p>
-  <p>🌸 Sadakat kraliyetin temelidir.</p>
-  <p>🌸 Masallara inanmak serbesttir.</p>
+<div class="section" id="rules">
+    <h2>📜 Krallık Kuralları</h2>
+    <ul>
+        <li>👑 Saygı her şeyden önce gelir</li>
+        <li>💖 Kırıcı sözlere yer yoktur</li>
+        <li>🏰 Krallık huzuru korunur</li>
+        <li>✨ Herkes eşittir</li>
+    </ul>
 </div>
 
-<div id="story" class="page">
-  <h1>Masal</h1>
-  <p>
-    Bir zamanlar, mor gökyüzünün altında
-    bir prenses yaşardı.
-    Sessizdi ama hayalleri güçlüydü.
-  </p>
-  <p>
-    Bu site, onun masalının dijital sayfasıdır.
-  </p>
+<div class="hero">
+    <a class="btn" href="castle.html">Şatoya Gir ✨</a>
 </div>
 
-<!-- SAAT & ZİYARET -->
 <div class="clock" id="clock"></div>
-<div class="counter">Ziyaret: <span id="visit"></span></div>
 
 <script>
-function toggleMenu(){
-  document.querySelector('.menu-btn').classList.toggle('active');
-  document.getElementById('menu').classList.toggle('active');
-}
-
-function goPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  toggleMenu();
-}
-
 function updateClock(){
-  const d=new Date();
-  document.getElementById('clock').innerHTML =
-    d.toLocaleDateString('tr-TR')+" | "+d.toLocaleTimeString('tr-TR');
+    const d=new Date();
+    document.getElementById("clock").innerHTML =
+        d.toLocaleDateString("tr-TR")+" | "+d.toLocaleTimeString("tr-TR");
 }
 setInterval(updateClock,1000);
 updateClock();
-
-let visit=localStorage.getItem("visit");
-visit=visit?Number(visit)+1:1;
-localStorage.setItem("visit",visit);
-document.getElementById("visit").innerText=visit;
 </script>
 
 </body>
