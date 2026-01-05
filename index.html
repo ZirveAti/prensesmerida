@@ -11,13 +11,6 @@ body{
     font-family: Georgia, serif;
     background: linear-gradient(180deg,#ffb6f0,#c77dff);
     color:white;
-    opacity:0;
-    animation: pageIn 1.2s ease forwards;
-}
-
-@keyframes pageIn{
-    from{opacity:0;transform:translateY(30px);}
-    to{opacity:1;transform:translateY(0);}
 }
 
 /* MENU */
@@ -32,13 +25,14 @@ nav{
     z-index:100;
 }
 
+nav .logo{font-size:22px;font-weight:bold;}
+
 nav a{
     color:white;
     text-decoration:none;
     margin-left:20px;
 }
 
-/* HERO */
 .hero{
     text-align:center;
     padding:80px 20px;
@@ -51,7 +45,6 @@ nav a{
     border-radius:20px;
 }
 
-/* BUTTON */
 .btn{
     display:inline-block;
     margin-top:20px;
@@ -60,27 +53,14 @@ nav a{
     color:white;
     border-radius:25px;
     text-decoration:none;
-    transition:.3s;
 }
 
-.btn:hover{transform:scale(1.05);}
-
-/* CLOCK */
 .clock{
     position:fixed;
     bottom:15px;
     right:20px;
     font-size:14px;
     opacity:.85;
-}
-
-/* PAGE OUT */
-.fade-out{
-    animation: pageOut .6s ease forwards;
-}
-
-@keyframes pageOut{
-    to{opacity:0;transform:translateY(-30px);}
 }
 </style>
 </head>
@@ -92,7 +72,7 @@ nav a{
     <div>
         <a href="#about">Hakkında</a>
         <a href="#rules">Kurallar</a>
-        <a href="castle.html" onclick="goPage(event)">Şato</a>
+        <a href="castle.html">Şato</a>
     </div>
 </nav>
 
@@ -104,20 +84,24 @@ nav a{
 
 <div class="section" id="about">
     <h2>✨ Krallık Hakkında</h2>
-    <p>Bu krallık sevgi ve zarafet üzerine kuruludur.</p>
+    <p>
+        Meridanın Kraliyeti sevgi, sadakat ve saygı üzerine kurulmuş
+        büyülü bir diyardır.
+    </p>
 </div>
 
 <div class="section" id="rules">
     <h2>📜 Krallık Kuralları</h2>
     <ul>
-        <li>👑 Saygı esastır</li>
-        <li>💖 Kalp kırılmaz</li>
-        <li>🏰 Huzur korunur</li>
+        <li>👑 Saygı her şeyden önce gelir</li>
+        <li>💖 Kırıcı sözlere yer yoktur</li>
+        <li>🏰 Krallık huzuru korunur</li>
+        <li>✨ Herkes eşittir</li>
     </ul>
 </div>
 
 <div class="hero">
-    <a class="btn" href="castle.html" onclick="goPage(event)">Şatoya Gir ✨</a>
+    <a class="btn" href="castle.html">Şatoya Gir ✨</a>
 </div>
 
 <div class="clock" id="clock"></div>
@@ -130,14 +114,6 @@ function updateClock(){
 }
 setInterval(updateClock,1000);
 updateClock();
-
-function goPage(e){
-    e.preventDefault();
-    document.body.classList.add("fade-out");
-    setTimeout(()=>{
-        window.location.href = e.target.href;
-    },600);
-}
 </script>
 
 </body>
