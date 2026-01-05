@@ -10,30 +10,31 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: "Georgia", serif;
+  font-family:"Playfair Display", serif;
 }
 
 body{
-  background:linear-gradient(to bottom,#2b124c,#0b0318);
-  color:#fff;
+  background:linear-gradient(to bottom,#f7e9ff,#e9d6ff,#d9c2ff);
+  color:#3a1c4a;
   overflow-x:hidden;
 }
 
-/* MENU BUTON */
+/* ===== MENÜ BUTON ===== */
 .menu-btn{
   position:fixed;
   top:20px;
   right:20px;
-  width:38px;
-  height:28px;
+  width:36px;
+  height:26px;
   cursor:pointer;
   z-index:1001;
 }
 .menu-btn span{
   display:block;
   height:3px;
-  background:#e6c7ff;
+  background:#8b4cff;
   margin:6px 0;
+  border-radius:5px;
   transition:.4s;
 }
 .menu-btn.active span:nth-child(1){
@@ -46,11 +47,11 @@ body{
   transform:rotate(-45deg) translate(7px,-7px);
 }
 
-/* MENU */
+/* ===== MENÜ ===== */
 nav{
   position:fixed;
   inset:0;
-  background:rgba(20,5,40,.97);
+  background:rgba(255,240,255,.95);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -65,15 +66,15 @@ nav ul{
 }
 nav li{
   font-size:26px;
-  margin:16px 0;
+  margin:18px 0;
   cursor:pointer;
-  color:#e6c7ff;
+  color:#7a3db8;
 }
 nav li:hover{
-  text-shadow:0 0 15px #c77dff;
+  text-decoration:underline;
 }
 
-/* PAGE */
+/* ===== SAYFA ===== */
 .page{
   min-height:100vh;
   display:none;
@@ -82,114 +83,104 @@ nav li:hover{
   flex-direction:column;
   text-align:center;
   padding:40px;
-  animation:fade .9s;
+  animation:fade 1s;
 }
 .page.active{display:flex;}
 
 @keyframes fade{
-  from{opacity:0;transform:translateY(25px);}
+  from{opacity:0;transform:translateY(30px);}
   to{opacity:1;transform:translateY(0);}
 }
 
-/* TEXT */
+/* ===== YAZILAR ===== */
 h1{
-  font-size:44px;
-  margin-bottom:12px;
+  font-size:46px;
+  margin-bottom:14px;
 }
 h2{
   font-size:20px;
   font-weight:normal;
+  margin-bottom:18px;
   opacity:.85;
-  margin-bottom:16px;
 }
 p{
-  max-width:700px;
+  max-width:720px;
   font-size:16px;
-  line-height:1.7;
-  opacity:.9;
+  line-height:1.8;
   margin-bottom:14px;
 }
 
-/* CLOCK & VISIT */
+/* ===== ALT BİLGİ ===== */
 .clock{
   position:fixed;
   bottom:18px;
   left:18px;
   font-size:13px;
-  opacity:.85;
+  opacity:.7;
 }
 .counter{
   position:fixed;
   bottom:18px;
   right:18px;
   font-size:13px;
-  opacity:.85;
+  opacity:.7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- MENU BUTTON -->
+<!-- MENÜ BUTON -->
 <div class="menu-btn" onclick="toggleMenu()">
-  <span></span>
-  <span></span>
-  <span></span>
+  <span></span><span></span><span></span>
 </div>
 
-<!-- MENU -->
+<!-- MENÜ -->
 <nav id="menu">
   <ul>
-    <li onclick="goPage('home')">Ana Salon</li>
-    <li onclick="goPage('about')">Kraliyet Hakkında</li>
+    <li onclick="goPage('home')">Saray</li>
+    <li onclick="goPage('about')">Prenses Hakkında</li>
     <li onclick="goPage('rules')">Kraliyet Kuralları</li>
-    <li onclick="goPage('story')">Kraliyet Hikâyesi</li>
+    <li onclick="goPage('story')">Masal</li>
   </ul>
 </nav>
 
-<!-- PAGES -->
+<!-- SAYFALAR -->
 <div id="home" class="page active">
   <h1>Meridanın Kraliyeti</h1>
-  <h2>Masalların başladığı yer ✨</h2>
+  <h2>Bir prensesin masalından doğan krallık ✨</h2>
 </div>
 
 <div id="about" class="page">
-  <h1>Kraliyet Hakkında</h1>
-  <h2>Bu krallık zarafet, sadelik ve hayaller üzerine kuruldu.</h2>
-
+  <h1>Prenses Hakkında</h1>
   <p>
-    Meridanın Kraliyeti, sessizliğin içinde doğmuş bir masaldır.
-    Burada kelimeler bağırmaz, anlamlarını fısıldar.
-  </p>
-  <p>
-    Gösteriş değil, duygu ön plandadır.
-    Sadelik bu krallığın en büyük gücüdür.
+    Merida, zarafetin ve cesaretin simgesidir.
+    Bu krallık; hayal kurabilenlerin, kalbi temiz olanların
+    sığınağıdır.
   </p>
 </div>
 
 <div id="rules" class="page">
   <h1>Kraliyet Kuralları</h1>
-
-  <p>• Saygı her şeyden önce gelir.</p>
-  <p>• Zarafet, gücün en sessiz hâlidir.</p>
-  <p>• Sadakat, kraliyetin temel taşıdır.</p>
-  <p>• Her kelime bilinçle söylenir.</p>
+  <p>🌸 Zarafet her şeyden önce gelir.</p>
+  <p>🌸 Kalp kırmak yasaktır.</p>
+  <p>🌸 Sadakat kraliyetin temelidir.</p>
+  <p>🌸 Masallara inanmak serbesttir.</p>
 </div>
 
 <div id="story" class="page">
-  <h1>Kraliyet Hikâyesi</h1>
-
+  <h1>Masal</h1>
   <p>
-    Her krallığın bir başlangıcı vardır.
-    Meridanın Kraliyeti ise bir hayalle başladı.
+    Bir zamanlar, mor gökyüzünün altında
+    bir prenses yaşardı.
+    Sessizdi ama hayalleri güçlüydü.
   </p>
   <p>
-    Zamanla kelimeler çoğaldı, anlam derinleşti.
-    Bu hikâye hâlâ yazılmaya devam ediyor.
+    Bu site, onun masalının dijital sayfasıdır.
   </p>
 </div>
 
-<!-- CLOCK & VISIT -->
+<!-- SAAT & ZİYARET -->
 <div class="clock" id="clock"></div>
 <div class="counter">Ziyaret: <span id="visit"></span></div>
 
@@ -221,3 +212,4 @@ document.getElementById("visit").innerText=visit;
 
 </body>
 </html>
+
